@@ -28,7 +28,7 @@ This implementations generate images that are compatible with VizHash_GD:
     </tbody>
 </table>
 
-The difference in picture quality is because I coudn't find a way to make antialiasing work with PHP GD.
+The difference in picture quality is because we coudn't find a way to make antialiasing work with PHP GD.
 
 VizHash.js is distributed under the <a href="http://www.opensource.org/licenses/zlib-license.php">zlib/libpng licence</a>.
 
@@ -66,7 +66,7 @@ What you should know
 =====================
 
 * There is no unitests yet. It should work, but you know the drill... And as Unix dev, we hadn't the opportunity to try it under IE.
-* Image are compatible with VizHash_GD to a certain point: enought for the humane eye to be able to match a picture from each implementation without a doubt. But there are differences that will prevent you from easily matching them programatically.
+* Image are compatible with VizHash_GD to a certain point: enough for the human eye to be able to match a picture from each implementation without a doubt. But there are differences that will prevent you from easily matching them programatically.
 * On one hand, VizHash.js uses zero server ressources unlike VizHash_GD. But it does add weight to the page, workload to the client, and it requires canvas support. IE 9+, FF 3.6+, Chrome 17+, 5.05+ and Opera 11.6+ support canvas.
 * Part of the JS code shows a weird style, or is inneficient. Of one the reasons is that to maintain compatibility with VizHash_GD, the hash integer array state must be exactly changing at the same time, for the same operations. While some parts of the algorythm might have made sense in the PHP code, it feels strange in a javascript context. But if you change it, you risk loosing the result parity.
 
@@ -81,7 +81,7 @@ Possible improvements
 Special thanks:
 ===============
 
-* The mozilla team for inspiring me with <a href="https://wiki.mozilla.org/Identity/Watchdog/Visual_Hashing">something similar</div>.
+* The mozilla team for inspiring us with <a href="https://wiki.mozilla.org/Identity/Watchdog/Visual_Hashing">something similar</div>.
 * <a href="http://sebsauvage.net">Sebsauvage</a> for his PHP implementation.
 * Paul Johnston for providing his <a href="http://pajhome.org.uk/crypt/md5/index.html">javascript hash libs</a>.
 
