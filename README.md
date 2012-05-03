@@ -1,12 +1,14 @@
 VizHash.js: a javascript implementation of visual hashes
 ========================================================
 
-VizHash is an implementation of <a href="http://sebsauvage.net/wiki/doku.php?id=php:vizhash_gd">PHP VizHash_GD</a> in javascript using HTML5 canvas.
+<a href="http://jsfiddle.net/2nYsg/1/embedded/result/">Online demo</a>
 
-It takes a string, and turn it into an (almost) unique image that is easy to tell appart from other similar images. It is uselful in cases like:
+VizHash is an open source implementation of <a href="http://sebsauvage.net/wiki/doku.php?id=php:vizhash_gd">PHP VizHash_GD</a> in javascript using HTML5 canvas.
 
-- you want people to identify that a text is without error but you don't want to show the text (like for a password)
-- you want people to be able to tell which texts are the same among a lot of them quickly (for exemple IP addresses, emails, username, etc)
+It takes a string, and turn it into an (almost) unique image that is easy to tell appart from other similar images. It is useful in cases like:
+
+- you want people to identify what a text is without error but you don't want to display the text (like for a password);
+- you want people to be able to tell which texts are the same among a lot of them quickly (for exemple IP addresses, emails, username, etc).
 
 This implementations generate images that are compatible with VizHash_GD:
 
@@ -28,11 +30,13 @@ This implementations generate images that are compatible with VizHash_GD:
 
 The difference in picture quality is because I coudn't find a way to make antialiasing work with PHP GD.
 
+VizHash.js is distributed under the <a href="http://www.opensource.org/licenses/zlib-license.php">zlib/libpng licence</a>.
+
 Some stuff you could use it for
 ================================
 
-* Display a visual representation of passwords so you know you are entering the right one.
-* Display a visual representation bitcoin paiement address, so you can compare the one you entered with the one provided. It should avoid a lot of "Oh Oh" moment and it's much easier to compare than QR codes.
+* Display a <a href="http://jsfiddle.net/tXKj8/3/embedded/result/">visual representation of passwords</a> so you know you are entering the right one.
+* Display a visual representation of bitcoin paiement addresses, so you can compare the one you entered with the one provided. It should avoid a lot of "Oh Oh" moment and it's much easier to compare than QR codes.
 * Display anonymous comment hash of IP so you can easily follow a conversation thread by knowing who says what, but not who is who.
 * Display a visual representation of Git commit hash to ease history browsing.
 
@@ -62,7 +66,7 @@ What you should know
 =====================
 
 * There is no unitests yet. It should work, but you know the drill... And as Unix dev, we hadn't the opportunity to try it under IE.
-* Image are compatible with VizHash_GD to a certain point: enought for the humane eye to be able to match a picture from each implementation without a doubt. But there are differences that will prevent you from easily match them programatically.
+* Image are compatible with VizHash_GD to a certain point: enought for the humane eye to be able to match a picture from each implementation without a doubt. But there are differences that will prevent you from easily matching them programatically.
 * On one hand, VizHash.js uses zero server ressources unlike VizHash_GD. But it does add weight to the page, workload to the client, and it requires canvas support. IE 9+, FF 3.6+, Chrome 17+, 5.05+ and Opera 11.6+ support canvas.
 * Part of the JS code shows a weird style, or is inneficient. Of one the reasons is that to maintain compatibility with VizHash_GD, the hash integer array state must be exactly changing at the same time, for the same operations. While some parts of the algorythm might have made sense in the PHP code, it feels strange in a javascript context. But if you change it, you risk loosing the result parity.
 
@@ -70,22 +74,22 @@ Possible improvements
 ======================
 
 * Add some randomness to make it more secure like Mozilla <a href="https://github.com/mozilla/watchdog-visualhash/blob/master/Chrome/util.js#L49">does</a> with their own visual hashes. Espacially, we want to make it hard to bruteforce a password hash from a screenshoft.
-* Make it more beautiful by. Need to work with a color-minded designer with tech skills and sync with VisHash_GD. We could also add an option for rounder corner, iphone glassy icon effect, shadows, etc. But it can be done in CSS so is it worth it ?
+* Make it more beautiful. Need to work with a color-minded designer with tech skills and sync with VizHash_GD. We could also add an option for rounded corner, iphone glassy icon effect, shadows, etc. But it can be done in CSS so is it worth it ?
 * Add unit tests. Obviously. Which mean making lots of private methods public.
 
 
 Special thanks:
 ===============
 
-* The mozilla team for doing <a href="https://wiki.mozilla.org/Identity/Watchdog/Visual_Hashing">something similar</div>.
+* The mozilla team for inspiring me with <a href="https://wiki.mozilla.org/Identity/Watchdog/Visual_Hashing">something similar</div>.
 * <a href="http://sebsauvage.net">Sebsauvage</a> for his PHP implementation.
-* Paul Johnston foe providing his <a href="http://pajhome.org.uk/crypt/md5/index.html">javascript hash libs</a>.
+* Paul Johnston for providing his <a href="http://pajhome.org.uk/crypt/md5/index.html">javascript hash libs</a>.
 
 Donate
 =======
 
 Bitcoin always appreciated :-)
 
-<img src="https://github.com/sametmax/VizhHash.js/raw/master/bitcoin_hash.png">17JfymvUm9y2Z47puGfnsrGewDDCBPaYFj
+<img style="vertical-align:middle;" src="https://github.com/sametmax/VizhHash.js/raw/master/bitcoin_hash.png">JfymvUm9y2Z47puGfnsrGewDDCBPaYFj</a>
 
 See ? The simple discrete hash, easy to compare!
