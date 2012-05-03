@@ -192,7 +192,6 @@ vizhash = {
         textual hash integer array state. */
     function addShape(shape, color){
 
-      console.log(shape % 7);
       switch (shape % 7){
         case 0:
           drawRectangle(context, getX(), getY(), getX(), getY(), color);
@@ -217,7 +216,7 @@ vizhash = {
 
     }
 
-    /** Draw seven shapes into the canvas. Colors and shapes are generated using
+    /** Draw 8 shapes into the canvas. Colors and shapes are generated using
         the textual hash integer array state.*/
     function addShapes() {
       for(var i = 0; i <= 7; i++) {

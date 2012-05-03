@@ -26,6 +26,17 @@ This implementations generate images that are compatible with VizHash_GD:
     </tbody>
 </table>
 
+The difference in picture quality is because I coudn't find a way to make antialiasing work with PHP GD.
+
+Some stuff you could use it for
+================================
+
+* Display a visual representation of passwords so you know you are entering the right one.
+* Display a visual representation bitcoin paiement address, so you can compare the one you entered with the one provided. It should avoid a lot of "Oh Oh" moment and it's much easier to compare than QR codes.
+* Display anonymous comment hash of IP so you can easily follow a conversation thread by knowing who says what, but not who is who.
+* Display a visual representation of Git commit hash to ease history browsing.
+
+
 Usage
 ======
 
@@ -44,11 +55,37 @@ Then:
         document.body.appendChild(vhash.canvas);
     }
 
+Check the demo for stuff like getting a PNG and some CSS enhancements.
+
 
 What you should know
 =====================
 
-* There is no unitests yet. It should work, but you know the drill...
+* There is no unitests yet. It should work, but you know the drill... And as Unix dev, we hadn't the opportunity to try it under IE.
 * Image are compatible with VizHash_GD to a certain point: enought for the humane eye to be able to match a picture from each implementation without a doubt. But there are differences that will prevent you from easily match them programatically.
 * On one hand, VizHash.js uses zero server ressources unlike VizHash_GD. But it does add weight to the page, workload to the client, and it requires canvas support. IE 9+, FF 3.6+, Chrome 17+, 5.05+ and Opera 11.6+ support canvas.
 * Part of the JS code shows a weird style, or is inneficient. Of one the reasons is that to maintain compatibility with VizHash_GD, the hash integer array state must be exactly changing at the same time, for the same operations. While some parts of the algorythm might have made sense in the PHP code, it feels strange in a javascript context. But if you change it, you risk loosing the result parity.
+
+Possible improvements
+======================
+
+* Add some randomness to make it more secure like Mozilla <a href="https://github.com/mozilla/watchdog-visualhash/blob/master/Chrome/util.js#L49">does</a> with their own visual hashes. Espacially, we want to make it hard to bruteforce a password hash from a screenshoft.
+* Make it more beautiful by. Need to work with a color-minded designer with tech skills and sync with VisHash_GD. We could also add an option for rounder corner, iphone glassy icon effect, shadows, etc. But it can be done in CSS so is it worth it ?
+* Add unit tests. Obviously. Which mean making lots of private methods public.
+
+
+Special thanks:
+===============
+
+* The mozilla team for doing <a href="https://wiki.mozilla.org/Identity/Watchdog/Visual_Hashing">something similar</div>.
+* <a href="http://sebsauvage.net">Sebsauvage</a> for his PHP implementation.
+* Paul Johnston foe providing his <a href="http://pajhome.org.uk/crypt/md5/index.html">javascript hash libs</a>.
+
+Donate
+=======
+
+Bitcoin always appreciated :-)
+
+<img src="https://github.com/sametmax/VizhHash.js/raw/master/bitcoin_hash.png">17JfymvUm9y2Z47puGfnsrGewDDCBPaYFj
+
+See ? The simple discrete hash, easy to compare!

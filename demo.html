@@ -3,6 +3,22 @@
 <head>
   <title>Canvas</title>
   <script type="text/javascript" src="vizhash.min.js"></script>
+
+   <style type="text/css">
+
+         canvas, img {
+            -moz-box-shadow: 3px 3px 3px rgba(68,68,68,0.6);
+            -webkit-box-shadow: 3px 3px 3px rgba(68,68,68,0.6);
+            box-shadow: 3px 3px 3px rgba(68,68,68,0.6);
+
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            margin:1em;
+
+        }
+
+    </style>
+
 </head>
 <body>
 
@@ -15,14 +31,21 @@ function addHash(){
   var height = parseInt(document.hashForm.height.value, 10);
 
   if (vizhash.supportCanvas()) {
-    var vhash = vizhash.canvasHash(value, width, height);
-    var dt = document.createElement('dt');
-    dt.appendChild(document.createTextNode(value+":"))
-    var dd = document.createElement('dd');
-    var list = document.getElementById('canvas_list')
-    dd.appendChild(vhash.canvas);
-    list.appendChild(dt);
-    list.appendChild(dd);
+    try {
+      var vhash = vizhash.canvasHash(value, width, height);
+      var dt = document.createElement('dt');
+      dt.appendChild(document.createTextNode(value+":"))
+      var dd = document.createElement('dd');
+      var list = document.getElementById('canvas_list');
+      dd.appendChild(vhash.toImage());
+
+      list.insertBefore(dd, list.childNodes[0]);
+      list.insertBefore(dt, list.childNodes[0]);
+
+    } catch (err) {
+      alert(err);
+    }
+
 
   } else {
     alert("Your browser doesn't support canvas: you can't test this demo");
