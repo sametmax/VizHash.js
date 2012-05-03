@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Canvas</title>
+  <script type="text/javascript" src="vizhash.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+
+function addHash(){
+
+  var value = document.hashForm.userInput.value;
+  var width = parseInt(document.hashForm.width.value, 10);
+  var height = parseInt(document.hashForm.height.value, 10);
+
+  if (vizhash.supportCanvas()) {
+    var vhash = vizhash.canvasHash(value, width, height);
+    var dt = document.createElement('dt');
+    dt.appendChild(document.createTextNode(value+":"))
+    var dd = document.createElement('dd');
+    var list = document.getElementById('canvas_list')
+    dd.appendChild(vhash.canvas);
+    list.appendChild(dt);
+    list.appendChild(dd);
+
+  } else {
+    alert("Your browser doesn't support canvas: you can't test this demo");
+  }
+
+  return false;
+}
+
+window.onload = addHash;
+
+</script>
+
+<h1>VizHash.js Demo</h1>
+
+<form action="." method="get" name="hashForm"
+      accept-charset="utf-8" onSubmit="return addHash()">
+  <p>
+    <label for="userInput">
+      Text:<input type="text" name="userInput" value="Hello, world!">
+    </label>
+  </p>
+  <p>
+    Canvas size:
+    <input type="text" name="width" value="64">px X
+    <input type="text" name="height" value="64">px
+    <input type="submit" value="Make hash">
+  </p>
+  <dl id="canvas_list">
+  </dl>
+
+</form>
+
+</body>
+</html>
