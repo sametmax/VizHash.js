@@ -22,8 +22,8 @@ This implementations generate images that are compatible with VizHash_GD:
     </thead>
     <tbody>
         <tr>
-            <th><img src="https://github.com/sametmax/VizhHash.js/raw/master/vizhash_gd.png"></th>
-            <th><img src="https://github.com/sametmax/VizhHash.js/raw/master/vizhash_js.png"></th>
+            <th><img src="https://github.com/sametmax/VizHash.js/raw/master/vizhash_gd.png"></th>
+            <th><img src="https://github.com/sametmax/VizHash.js/raw/master/vizhash_js.png"></th>
         </tr>
     </tbody>
 </table>
@@ -90,6 +90,6 @@ Donate
 
 Bitcoin always appreciated :-)
 
-<img style="vertical-align:middle;" src="https://github.com/sametmax/VizhHash.js/raw/master/bitcoin_hash.png">JfymvUm9y2Z47puGfnsrGewDDCBPaYFj</a>
+<img style="vertical-align:middle;" src="https://github.com/sametmax/VizHash.js/raw/master/bitcoin_hash.png">JfymvUm9y2Z47puGfnsrGewDDCBPaYFj</a>
 
 See ? The simple discrete hash, easy to compare!
