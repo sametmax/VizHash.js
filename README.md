@@ -1,7 +1,7 @@
 VizHash.js: a javascript implementation of visual hashes
 ========================================================
 
-<a href="http://jsfiddle.net/2nYsg/1/embedded/result/">Online demo</a>
+<a href="http://jsfiddle.net/2nYsg/3/embedded/result/">Online demo</a>
 
 VizHash is an open source implementation of <a href="http://sebsauvage.net/wiki/doku.php?id=php:vizhash_gd">PHP VizHash_GD</a> in javascript using HTML5 canvas.
 
@@ -35,7 +35,7 @@ VizHash.js is distributed under the <a href="http://www.opensource.org/licenses/
 Some stuff you could use it for
 ================================
 
-* Display a <a href="http://jsfiddle.net/tXKj8/3/embedded/result/">visual representation of passwords</a> so you know you are entering the right one.
+* Display a <a href="http://jsfiddle.net/tXKj8/4/embedded/result/">visual representation of passwords</a> so you know you are entering the right one.
 * Display a visual representation of bitcoin paiement addresses, so you can compare the one you entered with the one provided. It should avoid a lot of "Oh Oh" moment and it's much easier to compare than QR codes.
 * Display anonymous comment hash of IP so you can easily follow a conversation thread by knowing who says what, but not who is who.
 * Display a visual representation of Git commit hash to ease history browsing.
