@@ -35,7 +35,7 @@ VizHash.js is distributed under the <a href="http://www.opensource.org/licenses/
 Some stuff you could use it for
 ================================
 
-* Display a <a href="http://jsfiddle.net/tXKj8/4/embedded/result/">visual representation of passwords</a> so you know you are entering the right one.
+* Display a <a href="http://jsfiddle.net/TANLB/embedded/result/">visual representation of passwords</a> so you know you are entering the right one. There is a <a href="https://github.com/sametmax/jQuery-Visual-Password">jQuery plugin</a> for that.
 * Display a visual representation of bitcoin paiement addresses, so you can compare the one you entered with the one provided. It should avoid a lot of "Oh Oh" moment and it's much easier to compare than QR codes.
 * Display anonymous comment hash of IP so you can easily follow a conversation thread by knowing who says what, but not who is who.
 * Display a visual representation of Git commit hash to ease history browsing.
@@ -75,7 +75,7 @@ Possible improvements
 
 * Add some randomness to make it more secure like Mozilla <a href="https://github.com/mozilla/watchdog-visualhash/blob/master/Chrome/util.js#L49">does</a> with their own visual hashes. Espacially, we want to make it hard to bruteforce a password hash from a screenshoft.
 * Make it more beautiful. Need to work with a color-minded designer with tech skills and sync with VizHash_GD. We could also add an option for rounded corner, iphone glassy icon effect, shadows, etc. But it can be done in CSS so is it worth it ?
-* Add unit tests. Obviously. Which mean making lots of private methods public.
+* Add unit tests. Obviously. Which means making lots of private methods public.
 
 
 Special thanks:
